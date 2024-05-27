@@ -1,0 +1,23 @@
+<template>
+    <lightning-card variant="Narrow" title="Cases" icon-name="standard:folder">
+        <div slot="actions">
+            <lightning-button label="Refresh" variant="brand" onclick={refresh}>
+            </lightning-button>
+        </div>
+        <div if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading..." variant="brand">
+            </lightning-spinner>
+        </div>
+        <div class="slds-var-p-around_small">
+            <template if:true={data}>
+                <c-custom-data-table-type hide-checkbox-column="true" key-field="Id" data={data} columns={columns}
+                    onvalueselect={handleSelection} draft-values={draftValues} oncellchange={handleCellChange}
+                    onsave={handleSave} oncancel={handleCancel}>
+                </c-custom-data-table-type>
+            </template>
+            <template if:false={data.length}>
+                <div class="slds-text-align_center slds-var-p-around_x-small">No cases found.</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

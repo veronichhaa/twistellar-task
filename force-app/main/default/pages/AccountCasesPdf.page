@@ -1,0 +1,29 @@
+<apex:page controller="AccountCasesPdfCtrl" renderAs="pdf">
+    <apex:stylesheet value="{!$Resource.accountCasesPdfCss}" />
+        <apex:dataTable value="{!accountCasesPrevWeek}" var="caseItem" title="Last Week Cases">
+            <apex:column >
+                <apex:facet name="header">Account</apex:facet>
+                <apex:outputText value="{!caseItem.Account.Name}"/>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">Account Owner</apex:facet>
+                <apex:outputText value="{!caseItem.Account.Owner.Name}"/>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">Case Number</apex:facet>
+                <apex:outputText value="{!caseItem.CaseNumber}"/>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">Status</apex:facet>
+                <apex:outputText value="{!caseItem.Status}"/>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">Priority</apex:facet>
+                <apex:outputText value="{!caseItem.Priority}"/>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">Origin</apex:facet>
+                <apex:outputText value="{!caseItem.Origin}"/>
+            </apex:column>
+        </apex:dataTable>
+</apex:page>
