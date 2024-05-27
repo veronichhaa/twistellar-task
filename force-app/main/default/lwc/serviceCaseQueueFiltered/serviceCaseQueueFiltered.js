@@ -24,7 +24,7 @@ const COLUMNS = [
         typeAttributes: {
             placeholder: 'Choose Status',
             options: { fieldName: 'pickListOptions' },
-            value: { fieldName: 'New' },
+            value: { fieldName: 'Status' },
             context: { fieldName: 'Id' }
         }
     },
